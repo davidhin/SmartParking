@@ -1,3 +1,24 @@
+var map = null;
+var markers = [];
+var filtered = [
+    {"pos_lat": -34.9214989,"pos_lng": 138.6007456},
+    {"pos_lat": -34.9214989,"pos_lng": 138.6008456},
+    {"pos_lat": -34.9214989,"pos_lng": 138.6009456},
+    {"pos_lat": -34.9214989,"pos_lng": 138.6010456},
+
+    {"pos_lat": -34.9224989,"pos_lng": 138.6006456},
+    {"pos_lat": -34.9224989,"pos_lng": 138.6007456},
+    {"pos_lat": -34.9224989,"pos_lng": 138.6008456},
+    {"pos_lat": -34.9224989,"pos_lng": 138.6009456},
+
+    {"pos_lat": -34.9324989,"pos_lng": 138.6009456},
+    {"pos_lat": -34.9214989,"pos_lng": 138.6209456},
+    {"pos_lat": -34.9124989,"pos_lng": 138.6029456},
+    {"pos_lat": -34.9224989,"pos_lng": 138.6069456},
+    {"pos_lat": -34.9244989,"pos_lng": 138.6109456},
+    {"pos_lat": -34.9224989,"pos_lng": 138.6000456}
+];
+
 // Init map
 function initMap() {
   var adl = {lat: -34.9284989, lng: 138.6007456};
@@ -50,7 +71,38 @@ function initMap() {
       ].join(' ');
     }
   });
-
+  clearMarkers();
+  addMarkers();
 }
 
+//Remove markers from map by setting their map to null
+function clearMarkers() {
+   for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
 
+function addMarkers() {
+    for (let i = 0; i < filtered.length; i++) {
+        var marker = new google.maps.Marker({
+          position: {lat: filtered[i].pos_lat, lng: filtered[i].pos_lng},
+          zIndex: i,
+          map: map
+        });
+
+        // Setting function for each marker
+        google.maps.event.addListener(marker, 'click', function() {
+            var card = document.getElementById('card');
+            if(card.style.display == "block"){
+                card.style.display = "none";
+            }else{
+                card.style.display = "block";
+            }
+        });
+
+        // Add to markers array
+        markers.push(marker);
+    }
+
+}

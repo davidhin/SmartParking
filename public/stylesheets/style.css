@@ -10,6 +10,11 @@ body {
   width: 100%;
 }
 
+/* Popup card on map screen */
+#card{
+    display: none;
+}
+
 .header {
     width: 100%;
     height: 56px;
@@ -19,7 +24,6 @@ body {
 }
 
 .header a{
-    /* padding: 18px; */
     height: 18px;
     width: 31px;
     color: #777 !important;
@@ -28,7 +32,6 @@ body {
 
 .header span{
     padding-left: 18px;
-    /* color: #777 !important; */
 }
 
 .mdl-card {
