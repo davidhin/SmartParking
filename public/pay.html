@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 		<script src="javascripts/main.js"></script> -->
+		<script src="javascripts/pay.js"></script>
 		<title>Past Sessions</title>
 	</head>
 	<body>
@@ -15,9 +16,31 @@
 			<span>Payment</span>
 		</div>
 
-		<button class="accordion">Setting 1</button>
-		<button class="accordion">Setting 2</button>
-		<button class="accordion">Setting 3</button>
+		<div class="payBody">
+			<div id="hours">
+				<button onclick="hoursUp()">+</button>
+				<div class="payHorizontal">
+					<p id="hoursNum">0</p>
+					<p id="hoursWord">hours</p>
+				</div>
+				<button onclick="hoursDown()">-</button>
+			</div>
+
+			<div id="minutes">
+				<button onclick="minutesUp()">+</button>
+				<div class="payHorizontal">
+					<p id="minutesNum">0</p>
+					<p id="minutesWord">minutes</p>
+				</div>
+				<button onclick="minutesDown()">-</button>
+			</div>
+
+			<div id="cost">
+				<p class="costP">$</p>
+				<p class="costP" id="dollar">0.00</p>
+			</div>
+
+		</div>
 
 	</body>
 

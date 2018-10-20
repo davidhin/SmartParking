@@ -59,10 +59,35 @@ body {
   margin: 8px 0px 0px 13px !important;
 }
 
+/* All menu pages ===================================================================================================================== */
+.menuButton {
+    background-color: white;
+    color: #777;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    position: relative;
+}
+
+.menuButton:hover {
+   background-color: #ccc;
+}
+
+/* Past sessions page ===================================================================================================================== */
 /* Accordian buttons for past sessions*/
+.wholeAcc {
+    display: inline-block;
+    height: 60px;
+    width: 100%;
+    position: inherit;
+}
+
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-   /* background-color: #eee; */
    background-color: white;
    color: #777;
    cursor: pointer;
@@ -72,11 +97,37 @@ body {
    border: none;
    outline: none;
    transition: 0.4s;
+   box-sizing: border-box;
+   display: inline-block;
+   position: absolute;
+   left: 0px;
+   /* position: relative; /* To get review button alignment right */ */
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
    background-color: #ccc;
+}
+
+/* Visible labels for past session accordions */
+.accordion p.accordLabel {
+    padding: 0px !important;
+    margin: 0px !important;
+    /* Accordian text ellipsis */
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    width: 190px !important;
+}
+
+/* Review button in accordion */
+.wholeAcc .reviewButt {
+    display: inline !important;
+    position: relative !important;
+    left:218px !important;
+    top: 18px !important;
+    width: 80px !important;
+    z-index: 9999 !important;
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -88,6 +139,7 @@ body {
    overflow: hidden;
 }
 
+/* Panels for past sessions */
 div.panel p {
     color: #777 !important;
     padding-bottom: 0px !important;
@@ -105,4 +157,35 @@ div.panel h6 {
 
 div.panel br{
     line-height: 10px !important;
+}
+
+div.panel p#location {
+    width: 10px !important;
+}
+
+/* Review page ===================================================================================================================== */
+#reviewTextArea {
+    width: calc(100% - 36px);
+    margin: 18px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+/* Pay page ===================================================================================================================== */
+#hours, #minutes {
+    display: inline-block;
+}
+
+#hoursNum, #hoursWord, #minutesNum, #minutesWord {
+    display: inline-block;
+    margin: 0px;
+}
+
+#hoursNum, #minutesNum {
+    padding-left: 12px;
+}
+
+.costP {
+    display: inline-block;
+    margin: 0px;
 }
