@@ -5,6 +5,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/* Map Screen page ===================================================================================================================== */
 #map {
   height: 100%;
   width: 100%;
@@ -57,6 +58,21 @@ body {
 
 .mdl-layout__drawer-button {
   margin: 8px 0px 0px 13px !important;
+}
+
+.mapTagContainer {
+    display: inline-block;
+}
+
+#mapPrice, #mapAvailability, #mapParkType {
+    display: inline-block;
+}
+
+#mapLocation {
+    display: block;
+    margin-bottom: 0px;
+    margin-left: 18px;
+    margin-right: 18px;
 }
 
 /* All menu pages ===================================================================================================================== */
@@ -161,6 +177,21 @@ div.panel br{
 
 div.panel p#location {
     width: 10px !important;
+}
+
+/* Reviews page ===================================================================================================================== */
+.reviewDivElement {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+    background-color: white;
+}
+
+.reviewReviewElement {
+    margin-bottom: 0px;
 }
 
 /* Review page ===================================================================================================================== */

@@ -7,55 +7,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="javascripts/main.js"></script>
+  <script src="javascripts/login.js"></script>
 </head>
 <body>
+    <h1>Login</h1>
+    <form action="javascript:login()">
+        <input type="text" name="email" placeholder="Email" id="loginEmail"></input>
+        <input type="text" name="password" placeholder="Password" id="loginPassword"></input>
+        <input type="submit" value="Login"></submit>
+    </form>
 
-<div class="mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">User Account</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="accountSettings.html">Account Settings</a>
-      <a class="mdl-navigation__link" href="pastSessions.html">Past Sessions</a>
-      <a class="mdl-navigation__link" href="favourites.html">Favourites</a>
-      <a class="mdl-navigation__link" href="paymentOptions.html">Payment Options</a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-
-    <!-- The card at the bottom -->
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Parking Location</h2>
-      </div>
-      <div class="mdl-card__supporting-text">
-        Price: $50
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="pay.html">
-          Pay
-        </a>
-      </div>
-      <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">favorite_border</i>
-        </button>
-      </div>
-    </div>
-
-    <input id="searchbar" class="mdl-shadow--2dp" type="text" placeholder="Search..">
-
-    <div id="map">
-    </div>
-
-  </main>
-</div>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvzIpwWPST-CXenOpSNOFOaVBiPle-zMs&callback=initMap&libraries=places">
-</script>
 </body>
 </html>

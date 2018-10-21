@@ -1,4 +1,10 @@
+# Running App
+
+1. `npm start`
+2. Use `test` as email and password
+
 # Initialise node
+
 Run `npm install`
 
 # Setting up the database
@@ -28,3 +34,21 @@ git rm --cached app.js
 ```
 
 4. Optional: Test that everything works. Start the server and go to http://localhost:3000/dbtest.json. You should see the users in the database. 
+
+
+
+# Importing/Exporting the Database
+
+1. Move sps.sql into the home directory
+2. Run the following command
+
+```
+mysql -u root -p --host=127.0.0.1 < sps.sql
+```
+
+If you want to export the database, do:
+
+```
+mysqldump -u root -p --host=127.0.0.1 --databases SPS > sps.sql
+```
+
