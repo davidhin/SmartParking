@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="javascripts/main.js"></script>
+</head>
+<body>
+
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">User Account</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" onclick="accountSettingsButton()">Account Settings</a>
+      <a class="mdl-navigation__link" onclick="pastSessionsButton()">Past Sessions</a>
+      <a class="mdl-navigation__link" onclick="favouritesButton()">Favourites</a>
+      <a class="mdl-navigation__link" onclick="paymentOptionsButton()">Payment Options</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+
+    <!-- The card at the bottom -->
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="card">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Parking Location</h2>
+      </div>
+      <div>
+        <p id="mapLocation">temp_location</p>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <p class="mapTagContainer">Price: $</p>
+        <p id="mapPrice">0</p>
+        <p id="hidden_parking_id" style="display:none"></p>
+        <br>
+        <p class="mapTagContainer">Avaiability: </p>
+        <p id="mapAvailability">0</p>
+        <br>
+        <p class="mapTagContainer">Type: </p>
+        <p id="mapParkType">0</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="payButton()">
+          Pay
+        </button>
+        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="reviewButton()">
+          Reviews
+        </button>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">favorite_border</i>
+        </button>
+      </div>
+    </div>
+
+    <input id="searchbar" class="mdl-shadow--2dp" type="text" placeholder="Search..">
+
+    <div id="map">
+    </div>
+
+  </main>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvzIpwWPST-CXenOpSNOFOaVBiPle-zMs&callback=initMap&libraries=places">
+</script>
+</body>
+</html>

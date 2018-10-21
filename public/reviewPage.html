@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="stylesheets/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script src="javascripts/main.js"></script> -->
+		<script src="javascripts/reviewPage.js"></script>
+		<title>Past Sessions</title>
+	</head>
+	<body>
+		<div class="header">
+			<a class="mdl-navigation__link" onclick="backButton()">Back</a>
+			<span>Leave a Review</span>
+		</div>
+
+		<div id="stars">
+			<span class="star" onclick="selectStar(1)">&#10025;</span>
+			<span class="star" onclick="selectStar(2)">&#10029;</span>
+			<span class="star" onclick="selectStar(3)">&#10029;</span>
+			<span class="star" onclick="selectStar(4)">&#10029;</span>
+			<span class="star" onclick="selectStar(5)">&#10029;</span>
+		</div>
+
+		<textarea id="reviewTextArea">
+
+		</textarea>
+
+		<button id="submitButton" onclick="submitReview()">Submit</button>
+
+	</body>
+</html>
