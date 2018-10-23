@@ -128,7 +128,7 @@ CREATE TABLE `payment_options` (
 
 LOCK TABLES `payment_options` WRITE;
 /*!40000 ALTER TABLE `payment_options` DISABLE KEYS */;
-INSERT INTO `payment_options` VALUES (6,'Paypal'), (6,'Debit'), (6,'Credit'), (5,'Paypal'), (4,'Paypal'), (4,'Credit'), (3,'Debit'), (2,'Debit'), (1,'Credit'), (1,'Debit');
+INSERT INTO `payment_options` VALUES (6,'Paypal'),(6,'Debit'),(6,'Credit'),(5,'Paypal'),(4,'Paypal'),(4,'Credit'),(3,'Debit'),(2,'Debit'),(1,'Credit'),(1,'Debit');
 /*!40000 ALTER TABLE `payment_options` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,4 +202,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-23 19:31:32
+-- Dump completed on 2018-10-23 21:32:33
