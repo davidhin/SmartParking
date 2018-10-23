@@ -17,11 +17,10 @@
       <!-- Title -->
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">User Account</span>
+    <span class="mdl-layout-title">Menu</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" onclick="accountSettingsButton()">Account Settings</a>
       <a class="mdl-navigation__link" onclick="pastSessionsButton()">Past Sessions</a>
-      <a class="mdl-navigation__link" onclick="favouritesButton()">Favourites</a>
       <a class="mdl-navigation__link" onclick="paymentOptionsButton()">Payment Options</a>
     </nav>
   </div>
@@ -39,6 +38,7 @@
         <p class="mapTagContainer">Price: $</p>
         <p id="mapPrice">0</p>
         <p id="hidden_parking_id" style="display:none"></p>
+        <p id="hidden_favourite" style="display:none"></p>
         <br>
         <p class="mapTagContainer">Avaiability: </p>
         <p id="mapAvailability">0</p>
@@ -47,7 +47,7 @@
         <p id="mapParkType">0</p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="payButton()">
+        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="mapPayButton" onclick="payButton()">
           Pay
         </button>
         <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="reviewButton()">
@@ -55,8 +55,8 @@
         </button>
       </div>
       <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">favorite_border</i>
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onclick="favouriteButton()">
+          <i class="material-icons" id="favourite_button">favorite_border</i>
         </button>
       </div>
     </div>

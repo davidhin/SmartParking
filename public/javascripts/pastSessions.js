@@ -1,3 +1,4 @@
+// Getting past sessions attributed to account id
 function getSessions() {
     var account_id = window.location.hash.substring(1);
 
@@ -14,6 +15,7 @@ function getSessions() {
     xhttp.send(JSON.stringify({"account_id": account_id}));
 }
 
+// Creating elements for each accordion segment
 function fillAccordion(sessions) {
     var body = document.getElementById('sessionsBody');
 
@@ -23,16 +25,24 @@ function fillAccordion(sessions) {
         var button = document.createElement("BUTTON");
         button.classList.add("reviewButt");
         button.onclick = function() {
-            location.href = 'reviewPage.html' + '#' + window.location.hash.substring(1);
+            // Getting parking_id from hidden element
+            var parking_id = this.parentElement.nextElementSibling.getElementsByClassName("hidden_parking_id_session")[0].innerText;
+            location.href = 'reviewPage.html' + '#' + window.location.hash.substring(1) + '#' + parking_id;
         }
         button.innerText = "Review";
         wholeAcc.appendChild(button);
 
+        // Visible accordion label
         var acc = document.createElement("DIV");
         acc.classList.add("accordion");
         var accLabel = document.createElement("P");
         accLabel.classList.add("accordLabel");
-        accLabel.innerText = sessions[i].date;
+
+        // Formatting date
+        var date = new Date(sessions[i].date);
+        var days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+        // Label for visible accordion label
+        accLabel.innerText = days[date.getDay()] + ' ' + date.getDate() + '/' + date.getMonth() + '/' + String(date.getFullYear()).slice(-2) + ' - ' + String(sessions[i].address).split(',')[2];
         acc.appendChild(accLabel);
         wholeAcc.appendChild(acc);
         body.appendChild(wholeAcc);
@@ -53,7 +63,7 @@ function fillAccordion(sessions) {
         panel.appendChild(hTime);
         var time = document.createElement("P");
         time.classList.add("time");
-        time.innerText = sessions[i].startTime;
+        time.innerText = String(sessions[i].startTime).split(':')[0] + ':' + String(sessions[i].startTime).split(':')[1] + ' - ' + String(sessions[i].endTime).split(':')[0] + ':' + String(sessions[i].endTime).split(':')[1];
         panel.appendChild(time);
         panel.appendChild(document.createElement("BR"));
 
@@ -62,7 +72,7 @@ function fillAccordion(sessions) {
         panel.appendChild(hPrice);
         var Price = document.createElement("P");
         Price.classList.add("price");
-        Price.innerText = sessions[i].cost;
+        Price.innerText = '$' + sessions[i].cost.toFixed(2);
         panel.appendChild(Price);
         panel.appendChild(document.createElement("BR"));
 
@@ -73,6 +83,11 @@ function fillAccordion(sessions) {
         type.classList.add("type");
         type.innerText = sessions[i].type;
         panel.appendChild(type);
+        var hidden_parking_id = document.createElement("DIV");
+        hidden_parking_id.classList.add("hidden_parking_id_session");
+        hidden_parking_id.style.display = "none";
+        hidden_parking_id.innerText = sessions[i].parking_id;
+        panel.appendChild(hidden_parking_id);
         body.appendChild(panel);
 
     }
@@ -80,6 +95,7 @@ function fillAccordion(sessions) {
     accordionCode();
 }
 
+// Code to make hidden panel element appear
 function accordionCode() {
     // Accordian function
     var acc = document.getElementsByClassName("accordion");
@@ -100,8 +116,11 @@ function accordionCode() {
             }
         });
     }
+}
 
-    /* Review button */
+// Sending account id and parking id to review page
+function reviewSessionButton(index) {
+    window.location.href = 'reviewPage.html' + '#' + window.location.hash.substring(1);
 }
 
 function backButton() {

@@ -1,5 +1,6 @@
+// Getting reviews for a certain parking space
 function requestReviews() {
-    var parking_id = window.location.hash.substring(1);
+    var parking_id = String(window.location).split('#')[2];
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -14,6 +15,7 @@ function requestReviews() {
     xhttp.send(JSON.stringify({"parking_id": parking_id}));
 }
 
+// Creating an element to house a review
 function createReviewElement(reviews) {
     for(var i=0; i<reviews.length; i++) {
 
@@ -44,4 +46,8 @@ function createReviewElement(reviews) {
         reviewBody.appendChild(line);
         document.getElementById("reviewsBody").appendChild(reviewBody);
     }
+}
+
+function backButton() {
+    window.location.href = 'map.html' + '#' + String(window.location).split('#')[1];
 }

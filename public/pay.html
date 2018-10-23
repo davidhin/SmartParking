@@ -10,7 +10,7 @@
 		<script src="javascripts/pay.js"></script>
 		<title>Past Sessions</title>
 	</head>
-	<body>
+	<body onload="fillPaymentOptions()">
 		<div class="header">
 			<a class="mdl-navigation__link" onclick="backButton()">Back</a>
 			<span>Payment</span>
@@ -39,6 +39,16 @@
 				<p class="costP">$</p>
 				<p class="costP" id="dollar">0.00</p>
 			</div>
+
+			<div class="dropdown">
+				<button class="dropbtn" onclick="dropdownShow()">Payment Options</button>
+				<div class="dropdown-content">
+			 	</div>
+			</div>
+
+			<input type="text" id="paymentInput" style="display: none" oninput="payButtonShow()"></input>
+
+			<button id="payButton" onclick="startSession()" style="display: none">Pay</button>
 
 		</div>
 

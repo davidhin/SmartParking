@@ -10,15 +10,23 @@
 		<script src="javascripts/paymentOptions.js"></script>
 		<title>Past Sessions</title>
 	</head>
-	<body>
+	<body onload="getPaymentOptions()">
 		<div class="header">
 			<a class="mdl-navigation__link" onclick="backButton()">Back</a>
 			<span>Payment Options</span>
 		</div>
 
-		<button class="menuButton">Setting 1</button>
-		<button class="menuButton">Setting 2</button>
-		<button class="menuButton">Setting 3</button>
+		<div id="paymentOptionBody">
+
+		</div>
+
+		<button class="menuButton" onclick="addPaymentOption()">+ Add Payment Option</button>
+		<div class="panel">
+			<form action="javascript:add()">
+				<input type="text" placeholder="Input payment name"></input>
+				<input type="submit"></input>
+			</form>
+		</div>
 
 	</body>
 
