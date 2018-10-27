@@ -15,56 +15,57 @@
 			<a class="mdl-navigation__link" onclick="backButton()">Back</a>
 			<span>Account Settings</span>
 		</div>
+		<div class="headerfill"></div>
 
 		<div id="accountDiv">
-			<p>Name: </p>
+			<p id="accountNameLabel">Name: </p>
 			<p id="accountPName">Name</p>
-			<p>Email: </p>
+			<p id="accountEmailLabel">Email: </p>
 			<p id="accountPEmail">Email</p>
 		</div>
 
-		</div> -->
-		<div class="wholeAcc">
+		</div>
+		<div class="wholeAccASPAGE">
 			<button class="menuButton accordion">Change Name</button> <!--Make a new menubutton class for the account settings accordions-->
 		</div>
-		<div class="panel">
+		<div class="accountSettingsPanel">
 			<form action="javascript:newName()" id="nameAccountChange">
-				<input type="text" placeholder="New Name"></input>
-				<input type="text" placeholder="Password"></input>
-				<input type="Submit" value="Submit"></input>
+				<input type="text" placeholder="New Name" class="asi"></input>
+				<input type="password" placeholder="Password" class="asi"></input>
+				<input type="Submit" value="Submit" class="asb"></input>
 			</form>
 		</div>
 
-		<div class="wholeAcc">
+		<div class="wholeAccASPAGE">
 			<button class="menuButton accordion">Change Email</button>
 		</div>
-		<div class="panel">
+		<div class="accountSettingsPanel">
 			<form action="javascript:newEmail()" id="emailAccountChange">
-				<input type="text" placeholder="New Email"></input>
-				<input type="text" placeholder="Password"></input>
-				<input type="Submit" value="Submit"></input>
+				<input type="text" placeholder="New Email" class="asi"></input>
+				<input type="password" placeholder="Password" class="asi"></input>
+				<input type="Submit" value="Submit" class="asb"></input>
 			</form>
 		</div>
 
-		<div class="wholeAcc">
+		<div class="wholeAccASPAGE">
 			<button class="menuButton accordion">Change Password</button>
 		</div>
-		<div class="panel">
+		<div class="accountSettingsPanel">
 			<form action="javascript:newPassword()" id="passwordAccountChange">
-				<input type="password" placeholder="New Password"></input>
-				<input type="password" placeholder="Old Password"></input>
-				<input type="Submit" value="Submit"></input>
+				<input type="password" placeholder="New Password" class="asi"></input>
+				<input type="password" placeholder="Old Password" class="asi"></input>
+				<input type="Submit" value="Submit" class="asb"></input>
 			</form>
 		</div>
 
-		<div class="wholeAcc">
+		<!-- <div class="wholeAccASPAGE">
 			<button class="menuButton accordion">Delete Account</button>
 		</div>
-		<div class="panel">
+		<div class="accountSettingsPanel">
 			<form action="javascript:deleteAccount()" id="deleteAccountChange">
-				<input type="Submit" value="Delete Account"></input>
+				<input type="Submit" value="Delete Account" class="asb"></input>
 			</form>
-		</div>
+		</div> -->
 
 	</body>
 	<script>

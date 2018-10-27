@@ -19,6 +19,14 @@ function getSessions() {
 function fillAccordion(sessions) {
     var body = document.getElementById('sessionsBody');
 
+    if(sessions.length==0) {
+        var nothing = document.createElement("P");
+        nothing.innerText = "No Sessions";
+        nothing.classList.add("noreviews");
+        body.appendChild(nothing);
+        return;
+    }
+
     for(var i=0; i<sessions.length; i++) {
         var wholeAcc = document.createElement("DIV");
         wholeAcc.classList.add("wholeAcc");

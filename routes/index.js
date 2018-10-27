@@ -89,7 +89,7 @@ router.post('/postingReview.json', function(req, res, next) {
     if (err) throw err;
     var query = "INSERT into reviews values(?, ?, ?, ?, ?)";
     connection.query(query, [account_id, parking_id, name, stars, review], function(err, results) {
-      // res.json(results); // send response
+      res.send(''); // send response
     });
   });
 });

@@ -18,7 +18,8 @@ function submitReviewName() {
 
 // Sending review to server
 function submitReview(name, account_id) {
-    console.log("hello");
+    // console.log("hello");
+    // return;
     var textReview = document.getElementById("reviewTextArea").value;
     var stars = document.getElementsByClassName("star");
 
@@ -31,12 +32,13 @@ function submitReview(name, account_id) {
 
     // Posting review
     let xhttp = new XMLHttpRequest();
-    // xhttp.onreadystatechange = function() {
-    //   if (this.readyState == 4 && this.status == 200) {
-    //     let name = JSON.parse(xhttp.responseText);
-    //     submitReview(name[0].name, account_id);
-    //   }
-    // };
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+    window.location.href = 'map.html' + '#' + window.location.hash.split('#')[1];
+        // let name = JSON.parse(xhttp.responseText);
+        // submitReview(name[0].name, account_id);
+      }
+    };
 
     xhttp.open('post', 'postingReview.json', true);
     xhttp.setRequestHeader('Content-type', 'application/json');
@@ -53,11 +55,11 @@ function selectStar(starNum) {
     var stars = document.getElementsByClassName("star");
 
     for(var i=0; i<starNum; i++) {
-        stars[i].innerHTML = "&#10025;";
+        stars[i].innerHTML = "&#10029;";
     }
 
     for(var j=starNum; j<5; j++) {
-        stars[j].innerHTML = "&#10029;";
+        stars[j].innerHTML = "&#10025;";
     }
 }
 

@@ -9,13 +9,16 @@
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="javascripts/login.js"></script>
 </head>
-<body>
-    <h1>Login</h1>
-    <form action="javascript:login()">
-        <input type="text" name="email" placeholder="Email" id="loginEmail"></input>
-        <input type="text" name="password" placeholder="Password" id="loginPassword"></input>
-        <input type="submit" value="Login"></submit>
-    </form>
+<body style="box-sizing:border-box">
+    <div id="loginDiv">
+        <h2 id="loginTitle">Login</h2>
+        <form id="loginForm" action="javascript:login()">
+            <input type="text" name="email" placeholder="Email" id="loginEmail"></input>
+            <input type="password" name="password" placeholder="Password" id="loginPassword"></input>
+            <input type="submit" value="Login" id="loginSubmit"></submit>
+        </form>
+        <p id="hiddenErrorLogin">No matching details. Please re-enter</p>
+    </div>
 
 </body>
 </html>

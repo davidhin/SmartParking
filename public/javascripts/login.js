@@ -7,8 +7,7 @@ function login() {
       if (this.readyState == 4 && this.status == 200) {
         let account = JSON.parse(xhttp.responseText);
         if(account.length==0) { // No matching account
-            document.getElementById("loginEmail").value = "you're wrong";
-            document.getElementById("loginPassword").value = "you're wrong";
+            document.getElementById("hiddenErrorLogin").style.display = "block";
         }else {
             window.location.href = 'map.html' + '#' + account[0].account_id;
         }

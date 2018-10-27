@@ -5,7 +5,7 @@
 
 # Initialise node
 
-Run `npm install`
+Run `npm install` if node_modules is not present
 
 # Setting up the database
 
@@ -40,13 +40,13 @@ git rm --cached app.js
 # Importing/Exporting the Database
 
 1. Move sps.sql into the home directory
-2. Run the following command
+2. To import the database run the following command
 
 ```
 mysql -u root -p --host=127.0.0.1 < sps.sql
 ```
 
-If you want to export the database, do:
+3. If you want to export the database, do:
 
 ```
 mysqldump -u root -p --host=127.0.0.1 --databases SPS > sps.sql

@@ -17,8 +17,8 @@
       <!-- Title -->
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Menu</span>
-    <nav class="mdl-navigation">
+    <span class="mdl-layout-title" id="navTitle">Menu</span>
+    <nav class="mdl-navigation" id="navLogin">
       <a class="mdl-navigation__link" onclick="accountSettingsButton()">Account Settings</a>
       <a class="mdl-navigation__link" onclick="pastSessionsButton()">Past Sessions</a>
       <a class="mdl-navigation__link" onclick="paymentOptionsButton()">Payment Options</a>
@@ -28,13 +28,10 @@
 
     <!-- The card at the bottom -->
     <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="card">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Parking Location</h2>
+      <div class="mdl-card__title" id="cardTitle">
+        <h3 class="mdl-card__title-text" id="mapLocation">Parking Location</h3>
       </div>
-      <div>
-        <p id="mapLocation">temp_location</p>
-      </div>
-      <div class="mdl-card__supporting-text">
+      <div class="mdl-card__supporting-text" id="cardDetailDiv">
         <p class="mapTagContainer">Price: $</p>
         <p id="mapPrice">0</p>
         <p id="hidden_parking_id" style="display:none"></p>

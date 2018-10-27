@@ -17,14 +17,22 @@ function requestReviews() {
 
 // Creating an element to house a review
 function createReviewElement(reviews) {
+    if(reviews.length==0) {
+        var nothing = document.createElement("P");
+        nothing.innerText = "No Reviews";
+        nothing.classList.add("noreviews");
+        document.getElementById("reviewsBody").appendChild(nothing);
+        return;
+    }
+
     for(var i=0; i<reviews.length; i++) {
 
         var starString = "";
         for(var j=0; j<reviews[i].stars; j++) {
-            starString += "&#10025;";
+            starString += "&#10029;";
         }
         for(var j=reviews[i].stars; j<5; j++) {
-            starString += "&#10029;";
+            starString += "&#10025;";
         }
 
         var reviewBody = document.createElement("DIV");
@@ -35,16 +43,19 @@ function createReviewElement(reviews) {
         reviewBody.appendChild(nameElement);
         var starElement = document.createElement("P");
         starElement.innerHTML = starString;
-        starElement.classList.add("reviewReviewElement");
+        starElement.classList.add("reviewReviewStars");
         reviewBody.appendChild(starElement);
         var textElement = document.createElement("P");
         textElement.innerText = reviews[i].review;
         textElement.classList.add("reviewReviewElement");
         reviewBody.appendChild(textElement);
-        var line = document.createElement("hr");
-        line.classList.add("reviewReviewElement");
-        reviewBody.appendChild(line);
         document.getElementById("reviewsBody").appendChild(reviewBody);
+        if(i!=reviews.length-1) {
+            var line = document.createElement("hr");
+            line.classList.add("reviewHr");
+            document.getElementById("reviewsBody").appendChild(line);
+        }
+
     }
 }
 

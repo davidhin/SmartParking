@@ -15,28 +15,31 @@
 			<a class="mdl-navigation__link" onclick="backButton()">Back</a>
 			<span>Payment</span>
 		</div>
+		<div class="headerfill"></div>
 
 		<div class="payBody">
-			<div id="hours">
-				<button onclick="hoursUp()">+</button>
-				<div class="payHorizontal">
-					<p id="hoursNum">0</p>
-					<p id="hoursWord">hours</p>
+			<div id="timeDiv">
+				<div id="hours">
+					<button onclick="hoursUp()">+</button>
+					<div class="payHorizontal">
+						<p id="hoursNum">0</p>
+						<p id="hoursWord">hours</p>
+					</div>
+					<button onclick="hoursDown()">-</button>
 				</div>
-				<button onclick="hoursDown()">-</button>
-			</div>
 
-			<div id="minutes">
-				<button onclick="minutesUp()">+</button>
-				<div class="payHorizontal">
-					<p id="minutesNum">0</p>
-					<p id="minutesWord">minutes</p>
+				<div id="minutes">
+					<button onclick="minutesUp()">+</button>
+					<div class="payHorizontal">
+						<p id="minutesNum">0</p>
+						<p id="minutesWord">minutes</p>
+					</div>
+					<button onclick="minutesDown()">-</button>
 				</div>
-				<button onclick="minutesDown()">-</button>
 			</div>
 
 			<div id="cost">
-				<p class="costP">$</p>
+				<p class="costP">Cost: $</p>
 				<p class="costP" id="dollar">0.00</p>
 			</div>
 

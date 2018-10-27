@@ -26,6 +26,7 @@ function newName() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           // DO SOMETHING IF WRONG PASSWORD
+          location.reload();
       }
     };
 
@@ -45,6 +46,7 @@ function newEmail() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           // DO SOMETHING IF WRONG PASSWORD
+          location.reload();
       }
     };
 
@@ -64,6 +66,7 @@ function newPassword() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           // DO SOMETHING IF WRONG PASSWORD
+          location.reload();
       }
     };
 
